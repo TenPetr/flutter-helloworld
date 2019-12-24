@@ -1,18 +1,48 @@
+// Importing material design wrapper
 import 'package:flutter/material.dart';
 
-void main() => runApp(App());
+// Main function - runs after start, took root stateless widget as a parameter
+void main() => runApp(MaterialApp(home: Home()));
 
-class App extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello World!"),
-          backgroundColor: Color.fromARGB(154, 200, 45, 68),
+    return Scaffold(
+      body: Center(
+        child: RaisedButton.icon(
+          icon: Icon(
+            Icons.mail,
+            color: Colors.white,
+            size: 20,
+          ),
+          label: Text(
+            "Mail me",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: "Roboto"),
+          ),
+          color: Colors.orange[700],
+          onPressed: () {
+            click();
+          },
         ),
-        body: Text("Oh shieeeet"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 30,
+        ),
+        onPressed: () {
+          click();
+        },
+        backgroundColor: Colors.orange[700],
       ),
     );
   }
+}
+
+click() {
+  print("joo!");
 }
